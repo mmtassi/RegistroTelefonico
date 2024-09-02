@@ -42,11 +42,11 @@ void agregarLlamada(Lista *lista, char *numero, int duracion) {
 }
 
 void mostrarRegistroLlamadas(Lista* lista) {
-    Llamadas *aux=lista->cab;
     int i=1;
-    if(aux == nullptr) {
+    if(lista->cab == nullptr) {
         std::cout<<"Lista Vacia"<<std::endl;
     }else {
+        Llamadas *aux=lista->cab;
         while (aux != nullptr) {
             std::cout<<"Numero de llamada: "<< i << std::endl;
             std::cout<<"Numero: "<< aux->numero << std::endl;
@@ -67,15 +67,12 @@ void calcularDuracionTotal(Lista *lista) {
     std::cout<<"Total de minutos: "<<cant<< std::endl;
 }
 
-void liberarMemoria(Lista *lista) {
-    if(lista->cab->sig==nullptr) {
-        lista->cab=nullptr;
-    }else {
-        Llamadas* aux=lista->cab;
-        while (aux->sig != nullptr) {
-            aux=aux->sig;
-        }
-        aux=nullptr;
-        liberarMemoria(lista);
+void liberarMemoria(Lista* lista) {
+    Llamadas* aux = lista->cab; // Empezar desde la cabecera de la lista
+    while (aux != nullptr) {
+        Llamadas* temp = aux;  // Guardar el nodo actual
+        aux = aux->sig;        // Avanzar al siguiente nodo
+        delete temp;           // Liberar la memoria del nodo actual
     }
+    lista->cab = nullptr;      // Asegurarse de que la cabecera esté en nullptr
 }

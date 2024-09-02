@@ -15,8 +15,6 @@ struct Lista {
     Llamadas *cab;
 };
 
-//Llamadas* newNodo(char *numero,int duracion);
-Lista* newLista();
 void agregarLlamada(Lista *lista, char *numero,int duracion);
 void mostrarRegistroLlamadas(Lista* lista);
 void calcularDuracionTotal(Lista *lista);
