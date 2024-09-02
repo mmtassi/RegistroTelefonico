@@ -52,3 +52,13 @@ void mostrarRegistroLlamadas(Lista* lista) {
         aux=aux->sig;
     }
 }
+
+void calcularDuracionTotal(Lista *lista) {
+    int cant=0;
+    Llamadas *aux=lista->cab;
+    while (aux != nullptr) {
+        cant +=aux->duracion;
+        aux=aux->sig;
+    }
+    std::cout<<"Total de minutos: "<<cant<< std::endl;
+}
