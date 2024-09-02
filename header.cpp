@@ -47,7 +47,7 @@ void mostrarRegistroLlamadas(Lista* lista) {
     while (aux != nullptr) {
         std::cout<<"Numero de llamada: "<< i << std::endl;
         std::cout<<"Numero: "<< aux->numero << std::endl;
-        std::cout<<"Duracion: "<< aux->numero <<"\n"<< std::endl;
+        std::cout<<"Duracion: "<< aux->duracion <<"\n"<< std::endl;
         i++;
         aux=aux->sig;
     }
