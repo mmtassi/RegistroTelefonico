@@ -7,28 +7,6 @@
 #include <cstring>
 #include <iostream>
 
-/*Llamadas * newNodo(char *numero, int duracion) {
-    Llamadas *aux=new Llamadas();
-    if(aux == NULL) {
-        std::cout <<"No hay memoria disponible" << std::endl;
-        exit(-1);
-    }
-    strcpy(aux->numero,numero);
-    aux->duracion=duracion;
-    aux->sig=nullptr;
-    return aux;
-}
-
-Lista * newLista() {
-    Lista *aux=new Lista();
-    if(aux == NULL) {
-        std::cout <<"No hay memoria disponible" << std::endl;
-        exit(-1);
-    }
-    aux->cab=nullptr;
-    return aux;
-}*/
-
 void agregarLlamada(Lista *lista, char *numero, int duracion) {
     if(lista->cab==nullptr) {
         lista->cab=new Llamadas{numero,duracion,nullptr};
