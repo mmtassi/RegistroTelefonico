@@ -10,5 +10,7 @@ int main() {
     agregarLlamada(lista,"1134052474",25);
     mostrarRegistroLlamadas(lista);
     calcularDuracionTotal(lista);
+    liberarMemoria(lista);
+    mostrarRegistroLlamadas(lista);
     return 0;
 }

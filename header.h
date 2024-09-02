@@ -20,5 +20,6 @@ Lista* newLista();
 void agregarLlamada(Lista *lista, char *numero,int duracion);
 void mostrarRegistroLlamadas(Lista* lista);
 void calcularDuracionTotal(Lista *lista);
+void liberarMemoria(Lista* lista);
 
 #endif //HEADER_H
